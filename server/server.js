@@ -1,3 +1,4 @@
+/* eslint no-console: 0 */
 import express from 'express';
 import session from 'express-session';
 import bodyParser from 'body-parser';
@@ -50,12 +51,12 @@ app.use(
     secret: 'test session',
     resave: true,
     saveUninitialized: false,
-    cookie: { secure: true }
+    cookie: { secure: true },
   })
 );
 
 app.get('/check', function(req, res) {
   res.json({
-    TEST: 'Welcome to the Node express JWT Tutorial'
+    TEST: 'Welcome to the Node express JWT Tutorial',
   });
 });

@@ -63,19 +63,18 @@ yarn start
 
 # **Editor setup**
 
-To keep consistency to the style of resources, I decided to stick to some shared rules that have to be applied to every project using some editor's plugins. Plese be sure to disable / remove any other js/jsx linters or custom configurations.
-
-#### Basic Editor Configuration
-
-I chose to use [EditorConfig](http://editorconfig.org/) to share the basic configuration like indentation and charset. It works by having a `.editorconfig` file in the root directory and making sure your editor has the necessary plugin. You can find a list of downloads [here](http://editorconfig.org/#download). The choice to keep the indentation with 2 spaces is to be compliant with actual standards (major frameworks use this configuration both for JS and CSS).
-
-#### Auto correction on save
-
-I have chosen to use [js-beautify](https://github.com/beautify-web/js-beautify). Despite of it's name it works as a beautifier also for HTML and CSS. Every editor has a plugin that implement it, e.g. [Sublime](https://github.com/victorporof/Sublime-HTMLPrettify), [Atom](https://atom.io/packages/atom-beautify) or [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify). The setup for js-beautify is controlled within a `.jsbeautifyrc` file that has to be included in the root directory of the project (.hbs are not completely supported yet).
+Recommended to setup [eslint](https://eslint.org/) in your editor and turn on `autoFixOnSave`.
+Please make sure the husky pre-commit hook is running before you submit a pull request or you can manually run it with `yarn lint`.
 
 #### Eslint
 
 To check the Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.org/). The rules to detect errors are written in a `.eslintrc` file included in the root directory of the project (best practice is to use `airbnb linter`).
+
+#### Prettier
+
+This is a opinionated formatter that was widely adopted by the Javascript community rather quickly, there is no need to nitpick over syntax in PR's since [prettier](https://prettier.io) decides the format of your code.
+
+
 
 ---
 

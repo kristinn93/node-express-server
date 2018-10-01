@@ -18,14 +18,15 @@
         "yarn": ">= 1.9.x",
         "npm": ">= 6.3.x"
     },
-    "browserslist": [
-        "> 1%",
-        "last 2 versions",
-        "not ie <= 10"
-    ],
     "scripts": {
         "start": "NODE_ENV=production node --optimize_for_size --max_old_space_size=128 index.js --display-error-details",
-        "start:dev": "NODE_ENV=develop nodemon index.js --display-error-details"
+        "start:dev": "NODE_ENV=develop nodemon index.js --display-error-details",
+        "lint": "eslint --fix **/*.js"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run lint"
+        }
     },
     "dependencies": {
         "bcrypt": "^3.0.1",
@@ -52,6 +53,9 @@
         "eslint-config-airbnb": "17.0.0",
         "eslint-plugin-import": "^2.12.0",
         "eslint-plugin-jsx-a11y": "^6.0.3",
-        "nodemon": "^1.18.4"
+        "eslint-plugin-prettier": "3.0.0",
+        "husky": "1.1.0",
+        "nodemon": "^1.18.4",
+        "prettier": "1.14.3"
     }
 }
